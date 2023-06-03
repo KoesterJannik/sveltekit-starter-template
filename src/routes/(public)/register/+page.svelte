@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { superForm } from 'sveltekit-superforms/client';
-	import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
+
 	import { page } from '$app/stores';
 	export let data: PageData;
 
@@ -22,11 +22,6 @@
 {#if $page.status >= 400}
 	<h3 class:invalid={$page.status >= 400}>User already exist</h3>
 {/if}
-{#if message}
-	<h3>{$message}</h3>
-{/if}
-
-<SuperDebug data={$form} />
 
 <style>
 	.invalid {

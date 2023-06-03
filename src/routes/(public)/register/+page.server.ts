@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { message, superValidate } from 'sveltekit-superforms/server';
+import { superValidate } from 'sveltekit-superforms/server';
 import { fail, redirect } from '@sveltejs/kit';
 import { prisma } from '$lib/$server/db';
 import { hashPassword, signToken } from '$lib/$server/auth/utils';
@@ -52,8 +52,5 @@ export const actions = {
 			path: '/'
 		});
 		throw redirect(307, '/dashboard');
-
-		// Yep, return { form } here too
-		return message(form, 'User created successfully');
 	}
 };

@@ -3,4 +3,4 @@
 </script>
 
 <UnAuthHeader />
-Index route
+<h1 class="text-4xl">Index route</h1>
